@@ -10,9 +10,9 @@ function renderCountry(flagUrl, countryName, region, population, language, money
         <div class="card-body">
         <h5 class="card-title">${countryName}</h5>
         <p class="card-text">${region}</p>
-        <p class="card-text">&#128106;${population.toFixed(2)}M</p>
-        <p class="card-text">&#128483;${language}</p>
-        <p class="card-text">&#128176;${money}</p>
+        <p class="card-text">&#128106; ${population.toFixed(2)}M</p>
+        <p class="card-text">&#128483; ${language}</p>
+        <p class="card-text">&#128176; ${money}</p>
       </div>
     </div>
     </div>
@@ -34,6 +34,6 @@ for(let i = 0; i < data.length; i = i + 12) {
     let language = Object.values(data[i].languages);
     console.log(language);
     // console.log(currency);
-    renderCountry(data[i].flags.png, data[i].name.official, data[i].region, data[i].population/1000000, Object.values(data[i].languages), Object.values(data[i].currencies)[0].name);
+    renderCountry(data[i].flags.png, data[i].name.official, data[i].region, data[i].population/1000000, Object.values(data[i].languages).join(', '), Object.values(data[i].currencies)[0].name);
 }
 });
